@@ -1,0 +1,1 @@
+export const makeTodo = (id, name) => ({ id, name, comment: '', completed: false });
