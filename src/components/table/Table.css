@@ -7,6 +7,10 @@ body {
   background-color: #212121;
 }
 
+table {
+  border: 0px !important;
+}
+
 tr {
   display: table-row;
   vertical-align: inherit;
@@ -105,4 +109,9 @@ a {
 }
 .popover__message {
   text-align: center;
+}
+
+.fa-customIcon{
+  color: "white";
+  font-size: "20pt";
 }

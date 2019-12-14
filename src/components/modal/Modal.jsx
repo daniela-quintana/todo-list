@@ -30,20 +30,24 @@ const ModalExample = (props) => {
 
   return (
     <div>
-          <FontAwesomeIcon 
+          <FontAwesomeIcon
           icon={faCommentDots }
           onClick={toggle}
           title="caca"
           style={{
               color: "white",
               fontSize: "20pt",
-              marginRight: "20px"
           }}
       />
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>{props.text}</ModalHeader>
         <ModalBody>
-          <Input type="textarea" value={comment} onChange={(event) => setComment(event.target.value)} />
+          <input 
+            type="textarea" 
+            value={comment} 
+            onChange={(event) => setComment(event.target.value)} 
+            width="100%"
+          />
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={handlerClick()}>Save</Button>{' '}

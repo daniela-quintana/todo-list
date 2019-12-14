@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect, batch } from 'react-redux';
 import {
     addTodo,
@@ -8,8 +8,17 @@ import {
     increaseCounter,
 } from '../../store/actions/todos.actions';
 import { Table, TodoForm } from '../../components';
+import HomeOver from '../../components/home-over/HomeOver';
+import { Container } from 'reactstrap';
 
 const Home = (props) => {
+
+    const [loading, setLoading] = useState(true);
+
+    setTimeout( () => {
+        setLoading(false);
+    },5200);
+
     const {
         counter,
         todos,
@@ -18,15 +27,25 @@ const Home = (props) => {
         completedTodo,
         uncompletedTodo,
     } = props;
+
     return (
         <div className="home col-md-12">
-            <TodoForm counter={counter} addTodo={addTodo} />
-            <Table
-                todos={todos}
-                removeTodo={removeTodo}
-                uncompletedTodo={uncompletedTodo}
-                completedTodo={completedTodo}
-            />
+            { loading
+                ?
+                    <Container>
+                        <HomeOver />
+                    </Container>
+                :
+                    <Container>
+                        <TodoForm counter={counter} addTodo={addTodo} />
+                        <Table
+                            todos={todos}
+                            removeTodo={removeTodo}
+                            uncompletedTodo={uncompletedTodo}
+                            completedTodo={completedTodo}
+                        />
+                    </Container>
+            }
         </div>
     );
 };
@@ -41,7 +60,6 @@ const maDispatchToProps = (dispatch) => {
             // renderizen cuando ambas acciones esten completadas
             batch(() => {
                 dispatch(increaseCounter());
-                debugger
                 dispatch(addTodo(todo));
             })
         },
