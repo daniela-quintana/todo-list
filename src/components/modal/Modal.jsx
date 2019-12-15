@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { addComment } from '../../store/actions/todos.actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
 const ModalExample = (props) => {
   const {
-    buttonLabel,
     className
   } = props;
 
@@ -30,12 +29,12 @@ const ModalExample = (props) => {
 
   return (
     <div>
-          <FontAwesomeIcon
-          icon={faCommentDots }
+      <FontAwesomeIcon
+          icon={faCommentDots}
           onClick={toggle}
-          title="caca"
+          clasName="bnt-btn"
           style={{
-              color: "white",
+              color: "#262626",
               fontSize: "20pt",
           }}
       />
@@ -43,6 +42,7 @@ const ModalExample = (props) => {
         <ModalHeader toggle={toggle}>{props.text}</ModalHeader>
         <ModalBody>
           <input 
+            placeholder= "Add a comment"
             type="textarea" 
             value={comment} 
             onChange={(event) => setComment(event.target.value)} 
@@ -50,8 +50,8 @@ const ModalExample = (props) => {
           />
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={handlerClick()}>Save</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button onClick={toggle}>Cancel</Button>
+          <Button color="#6ab7a4" onClick={handlerClick()}>Save</Button>{' '}
         </ModalFooter>
       </Modal>
     </div>

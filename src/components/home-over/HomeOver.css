@@ -7,16 +7,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.stage {
-  width: 100%;
-  height: 100%;
+body {
+  background-color: #fff;
+}
+
+html {
+  width: auto;
+  height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.stage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrapper {
   position: relative;
-  color: #fff;
+  color: #262626; 
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
@@ -35,7 +48,7 @@
           transform-origin: center center;
   width: 0.15rem;
   height: 145%;
-  background: #fff;
+  background: #262626;
   z-index: 4;
   -webkit-animation: slash 6s ease-in infinite;
           animation: slash 6s ease-in infinite;
@@ -50,7 +63,7 @@
           transform: translate(-50%, -50%);
   width: 0.75rem;
   height: 120%;
-  background: #232323;
+  background: #FFF;
   z-index: -1;
 }
 .slash:after {
@@ -61,7 +74,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #262626;
 }
 .sides {
   position: absolute;
@@ -73,7 +86,7 @@
 }
 .sides .side {
   position: absolute;
-  background: #fff;
+  background: #262626;
 }
 .sides .side:nth-child(1) {
   top: 0;

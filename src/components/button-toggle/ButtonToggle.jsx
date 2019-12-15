@@ -1,7 +1,7 @@
 import React from 'react';
 import './ButtonToggle.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 
 const ButtonToggle = ({ todo, uncompletedTodo, completedTodo }) => {
@@ -15,13 +15,12 @@ const ButtonToggle = ({ todo, uncompletedTodo, completedTodo }) => {
                 todo.completed ?
                     uncompletedTodo(todo)
                     : completedTodo(todo);
-            }}
-            className=""
-        >{completed
+            }} 
+            className="" >{ completed
             ? <FontAwesomeIcon 
-                icon={faMinusCircle} 
+                icon={faCheckCircle} 
                 style={{
-                    color: "white",
+                    color: "#6ab7a4",
                     fontSize: "20pt",
                     marginRight: "20px"
                 }}
@@ -29,7 +28,7 @@ const ButtonToggle = ({ todo, uncompletedTodo, completedTodo }) => {
             : <FontAwesomeIcon 
                 icon={faCheckCircle} 
                 style={{
-                    color: "white",
+                    color: "262626",
                     fontSize: "20pt",
                     marginRight: "20px"
                 }}

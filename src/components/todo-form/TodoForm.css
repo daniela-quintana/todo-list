@@ -16,16 +16,15 @@ input:focus {
 }
 
 button {
-  border:1px solid blue;
-  background:blue;
+  border:1px solid #6ab7a4;
+  background:#6ab7a4;
   color:white;
   /* margin: 0px !important; */
 }
 
-body {
-  background-color: #212121;
-justify-content: center;  
-align-content: center;
+button.btn.btn-secondary:hover {
+  border: none;
+  background-color: #b76a74;
 }
 
 .btn {
@@ -36,28 +35,35 @@ align-content: center;
   text-transform: uppercase;
   transition: 0.5s;
   color: white;
- /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-  /* outline: none;
-  border: 0;
-  box-shadow: none;
-  background-color: transparent;
-  font-size: 1.70rem; */
  }
 
 .btn:focus {
-  /* outline: none;
+  outline: none;
   border: 0;
   box-shadow: none;
-  background-color: transparent;  */
+  background-color: transparent;
 }
 
 .btn:hover {
-  background-color: transparent;
+  background-color: #389981;
 }
 
 a.btn.btn-1 {
   color: #eee;
   font-weight: 100;
+}
+
+.btn-add {
+  border-radius: 100px;
+  padding: 0px;
+  width: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.add-todo{
+  display: flex;
 }
 
 .form-control {
@@ -69,9 +75,36 @@ a.btn.btn-1 {
   width: 100%;
   height: 50px;
   font-family: inherit;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 300;
   color: #fff;
   background: transparent;
   -webkit-font-smoothing: antialiased;
+}
+
+.form-control:focus {
+  outline: none;
+  border: 0;
+  box-shadow: none;
+  border-bottom: 1px dotted #666;
+  border-radius: 0;
+  padding: 0 0 5px;
+  width: 100%;
+  height: 50px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #389981;
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+.form-check-inline {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0;
+  margin-right: 0.75rem;
+  justify-content: space-between;
 }

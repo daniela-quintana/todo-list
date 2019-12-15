@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ButtonToggle } from '..';
 import './Table.css';
-import { Row, Container, Col, Form } from 'reactstrap';
+import { Row, Container, Col } from 'reactstrap';
 import Modal from '../modal/Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
@@ -45,11 +45,11 @@ const Table = ({ todos, removeTodo, uncompletedTodo, completedTodo }) => {
                     </ol>
                 </nav>
                 <table className="table table-dark text-center">
-                    <thead style={{ marginTop: "60px" }}>
+                    <thead style={{ 
+                    marginTop: "60px", 
+                    color: "#262626"
+                    }}>
                         <tr>
-                            <th scope="col" className="w-25">Do</th>
-                            <th scope="col" className="w-25">Name</th>
-                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,22 +66,22 @@ const Table = ({ todos, removeTodo, uncompletedTodo, completedTodo }) => {
                                     style={{textDecoration: todo.completed ? "line-through" : "none"}}>
                                     {todo.name} {todo.completed === true ? 'Completed': ''}
                                 </td>
-                                <td className="w-25">  
+                                <td className="w-25 icons">  
                                 <Col xs={{size:12, offset: 2}} md={{ size: 6, offset: 4 }} className="form-check-inline">   
-                                    <FontAwesomeIcon
-                                        icon={faTimesCircle}
-                                        onClick={() => removeTodo(todo)}
-                                        style={{
-                                            color: "white",
-                                            fontSize: "20pt",
-                                            marginRight: "10pt"
-                                        }}
-                                    />   
                                     <Modal
                                         onClick={() => this.props.editTodo(todo.id)}
                                         id={todo.id}
                                         text={todo.name}
                                         comment={todo.comment}
+                                    />
+                                    <FontAwesomeIcon
+                                        icon={faTimesCircle}
+                                        onClick={() => removeTodo(todo)}
+                                        style={{
+                                        color: "#262626",
+                                        fontSize: "20pt",
+                                        marginRight: "10pt"
+                                        }}
                                     />   
                                 </Col> 
                                 </td>

@@ -3,15 +3,18 @@ import './HomeOver.css'
 
 class Home extends Component {
   render() {
+      
     const curry = f => (...args) =>
     args.length >= f.length ?
     f(...args) :
     curry(f.bind(f, ...args));
     
     const compose = (f, g) => x => f(g(x));
+
     const composeN = (...fns) => (...args) =>
     fns.reverse().
     reduce((x, f) => f.apply(f, [].concat(x)), args);
+
     return (
         <div class="stage">
         <div class="wrapper">

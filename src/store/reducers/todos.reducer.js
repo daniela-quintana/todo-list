@@ -12,19 +12,19 @@ const initialState = {
     counter: 3,
     todos: [{
         id: 0,
-        name: 'Estudiar más Redux',
+        name: 'Laundry',
         comment: '',
         completed: false
     },
     {
         id:1,
-        name: 'Agregar Firebase',
+        name: 'Send to-do-app',
         comment: '',
         completed: true
     },
     {
         id:2,
-        name: 'Poder editar tareas',
+        name: 'Edit pictures',
         comment: '',
         completed: false
     }],
@@ -90,8 +90,8 @@ const todosReducer = (state = initialState, action) => {
         case TODO_SHOW_FILTER:
             let todosResp = state.todos;
             let filteredState = {todos: []};
-            if(action.filter == 'TODO_SHOW_ACTIVE'){
-                filteredState.todos = state.todos.filter( todo => todo.completed == false )
+            if(action.filter === 'TODO_SHOW_ACTIVE'){
+                filteredState.todos = state.todos.filter( todo => todo.completed === false )
                 return {
                     ...state,
                     // solo retorna la lista donde el todo sea distinto a
@@ -99,8 +99,8 @@ const todosReducer = (state = initialState, action) => {
                     todos: filteredState.todos,
                 }
               }
-            if(action.filter == 'TODO_SHOW_COMPLETED'){
-                filteredState.todos = state.todos.filter( todo => todo.completed == true )
+            if(action.filter === 'TODO_SHOW_COMPLETED'){
+                filteredState.todos = state.todos.filter( todo => todo.completed === true )
                 return {
                     ...state,
                     // solo retorna la lista donde el todo sea distinto a
@@ -108,7 +108,7 @@ const todosReducer = (state = initialState, action) => {
                     todos: filteredState.todos,
                 }
             }
-            if(action.filter == 'TODO_SHOW_ALL'){
+            if(action.filter === 'TODO_SHOW_ALL'){
                 return {
                     ...state,
                     todos: todosResp,

@@ -1,9 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { makeTodo } from '../../utils';
-import { Row, Container, Col, Button } from 'reactstrap';
+import { Row, Container, Col } from 'reactstrap';
 import './TodoForm.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons'
 
 const TodoForm = ({ counter, addTodo }) => {
     // utilizacion de hook para variable local
@@ -14,7 +12,7 @@ const TodoForm = ({ counter, addTodo }) => {
                 <Container>
                     <Row>
                         <Col md="12">
-                            <form>
+                            <div className="add-todo">
                                 <input
                                     type="text"
                                     className="form-control"
@@ -22,9 +20,8 @@ const TodoForm = ({ counter, addTodo }) => {
                                     value={todoName}
                                     onChange={(event) => setTodoName(event.target.value)}
                                 />
-                                <Button
-                                    icon={faPlusCircle}
-                                    className="btn-lg"
+                                <button
+                                    className="btn-add"
                                     onClick={() => {
                                         // ejecutamos la accion pasada por props
                                         addTodo(makeTodo(counter, todoName));
@@ -33,11 +30,9 @@ const TodoForm = ({ counter, addTodo }) => {
                                     }}
                                     // si el name esta vacio, el button esta disabled
                                     // disabled={todoName === ''}
-                                >
-                                    <FontAwesomeIcon icon={faPlusCircle}/>
-                                </Button>
-                                
-                            </form>
+                                >+
+                                </button>     
+                            </div>
                         </Col>
                     </Row> 
                 </Container>
